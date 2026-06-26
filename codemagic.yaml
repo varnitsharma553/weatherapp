@@ -1,13 +1,13 @@
 workflows:
-  android-workflow:
-    name: Android Build
-    instance_type: linux_x2
+  android-apk:
+    name: Android APK
+
+    environment:
+      python: 3.11
 
     scripts:
-      - sudo apt-get update
-      - sudo apt-get install -y python3-pip git zip unzip openjdk-17-jdk
-      - pip3 install --upgrade pip
-      - pip3 install buildozer cython
+      - pip install --upgrade pip
+      - pip install buildozer cython
       - buildozer android debug
 
     artifacts:
