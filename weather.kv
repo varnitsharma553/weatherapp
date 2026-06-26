@@ -1,0 +1,48 @@
+<WeatherLayout>:
+
+    FloatLayout:
+
+        Image:
+            source: root.background_image
+            size_hint: 1, 1
+            pos_hint: {"x": 0, "y": 0}
+            keep_ratio: False
+            allow_stretch: True
+
+        BoxLayout:
+            orientation: "vertical"
+            padding: 15
+            spacing: 10
+
+            Label:
+                text: "🌦️ WEATHER APP PRO"
+                font_size: "24sp"
+                bold: True
+                size_hint_y: None
+                height: "60dp"
+
+            TextInput:
+                id: city_input
+                hint_text: "Enter City Name"
+                multiline: False
+                size_hint_y: None
+                height: "50dp"
+                font_size: "18sp"
+
+            Button:
+                text: "🔍 Get Weather"
+                size_hint_y: None
+                height: "50dp"
+                on_release: root.get_weather()
+
+            ScrollView:
+
+                Label:
+                    text: root.weather_text
+                    text_size: self.width, None
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    halign: "left"
+                    valign: "top"
+                    font_size: "16sp"
+                    color: 1, 0, 0, 1
