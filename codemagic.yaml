@@ -8,7 +8,6 @@ workflows:
     scripts:
       - python3 -m pip install --upgrade pip
       - pip install buildozer cython
-      - yes | sdkmanager --licenses
       - buildozer android debug
 
     artifacts:
