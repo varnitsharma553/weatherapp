@@ -3,12 +3,12 @@ workflows:
     name: Android APK
 
     environment:
-      vars:
-        BUILDOZER_WARN_ON_ROOT: 1
+      java: 17
 
     scripts:
       - python3 -m pip install --upgrade pip
-      - pip3 install buildozer cython
+      - pip install buildozer cython
+      - yes | sdkmanager --licenses
       - buildozer android debug
 
     artifacts:
