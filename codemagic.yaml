@@ -3,11 +3,12 @@ workflows:
     name: Android APK
 
     environment:
-      python: 3.11
+      vars:
+        BUILDOZER_WARN_ON_ROOT: 1
 
     scripts:
-      - pip install --upgrade pip
-      - pip install buildozer cython
+      - python3 -m pip install --upgrade pip
+      - pip3 install buildozer cython
       - buildozer android debug
 
     artifacts:
