@@ -2,12 +2,15 @@ workflows:
   android-apk:
     name: Android APK
 
+    instance_type: mac_mini_m2
+
     environment:
-      java: 17
+      vars:
+        BUILDOZER_WARN_ON_ROOT: 1
 
     scripts:
       - python3 -m pip install --upgrade pip
-      - pip install buildozer cython
+      - pip3 install buildozer==1.5.0 Cython
       - buildozer android debug
 
     artifacts:
